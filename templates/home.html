@@ -1,3 +1,49 @@
-<h1>
-    hiiiiveevvz
-</h1>
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+          
+          background-color: rgb(27, 26, 29);
+          display: flex;
+          justify-content: center;
+        }
+        
+        h1 {
+          color: maroon;
+          margin-left: -50px;
+        }
+        .data{
+            margin-top: 100px;
+            
+        }
+        button{
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        </style>
+</head>
+
+<body>
+
+    <div class="data">
+        <h1>Give me some credit</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="number" step=0.01 name="RevolvingUtilizationOfUnsecuredLines" placeholder="RevolvingUtilizationOfUnsecuredLines" required></br>
+            <input type="number" name="age" placeholder="age" required></br>
+            <input type="number" step=0.01 name="NumberOfTime30-59DaysPastDueNotWorse" placeholder="NumberOfTime30-59DaysPastDueNotWorse" required></br>
+            <input type="number" step=0.01 name="DebtRatio" placeholder="DebtRatio" required></br>
+            <input type="number" step=0.01 name="MonthlyIncome" placeholder="MonthlyIncome" required></br>
+            <input type="number" step=0.01 name="NumberOfOpenCreditLinesAndLoans" placeholder="NumberOfOpenCreditLinesAndLoans" required></br>
+            <input type="number" step=0.01 name="NumberOfTimes90DaysLate" placeholder="NumberOfTimes90DaysLate" required></br>
+            <input type="number" step=0.01 name="NumberRealEstateLoansOrLines" placeholder="NumberRealEstateLoansOrLines" required></br>
+            <input type="number" step=0.01 name="NumberOfTime60-89DaysPastDueNotWorse" placeholder="NumberOfTime60-89DaysPastDueNotWorse" required></br>
+            <input type="number" name="NumberOfDependents" placeholder="NumberOfDependents" required></br>
+           
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+<br>
+    </div>
+    {{prediction_text}}
+</body>
